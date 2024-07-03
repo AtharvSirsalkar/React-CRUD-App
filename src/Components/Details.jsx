@@ -4,6 +4,7 @@ import axios from "../utils/axios";
 import { toast } from "react-toastify";
 import Loading from "./Loading";
 import { ProductContext } from "../utils/Context";
+import "./nav.css";
 
 function Details() {
   const navigate = useNavigate();
@@ -35,26 +36,30 @@ function Details() {
   };
 
   return product ? (
-    <div className="w-[70%] h-full m-auto py-[10%] px-[2%] gap-[50px] flex items-center ">
+    <div className="details w-[70%] h-full m-auto py-[10%] px-[2%] gap-[50px] flex items-center ">
       <img
-        className="object-contain w-[40%] h-[80%] hover:scale-[1.07] ease-in-out duration-700"
+        className="prodimage object-contain md:w-[40%] md:h-[80%] sm:w-[150px] sm:h-[250px] w-[100px] h-[150] hover:scale-[1.07] ease-in-out duration-700"
         src={`${product.image}`}
         alt=""
       />
-      <div className="containt w-[50%] ">
-        <h1 className="text-4xl mb-5">{product.title}</h1>
-        <h3 className="text-zinc-400 mb-2">{product.category}</h3>
-        <h2 className="text-blue-400 mb-3">{product.price} Rupees</h2>
-        <p className="mb-10">{product.description}</p>
+      <div className="containt md:w-[50%] w-[100%] ">
+        <h1 className=" prodtitle md:text-4xl sm:text-lg text-base mb-5">
+          {product.title}
+        </h1>
+        <h3 className="prodcategory text-zinc-400 mb-2">{product.category}</h3>
+        <h2 className="prodprice text-blue-400 mb-3">{product.price} Rupees</h2>
+        <p className="proddescription mb-10 md:text-base text-xs">
+          {product.description}
+        </p>
         <Link
           to={`/edit/${product.id}`}
-          className="py-3 px-5 border rounded border-blue-400 hover:scale-[1.1] ease-in-out duration-500 hover:shadow-2xl text-blue-500"
+          className="md:py-3 md:px-5 py-2 px-3 border rounded border-blue-400 hover:scale-[1.1] ease-in-out duration-500 hover:shadow-2xl text-blue-500"
         >
           Edit
         </Link>
         <button
           onClick={() => ProductDeleteHandler(product.id)}
-          className="py-3 px-5 border rounded border-red-400 hover:scale-[1.1] ease-in-out duration-500 hover:shadow-2xl text-red-500 m-5"
+          className="md:py-3 md:px-5 py-2 px-3 border rounded border-red-400 hover:scale-[1.1] ease-in-out duration-500 hover:shadow-2xl text-red-500 m-5"
         >
           Delete
         </button>

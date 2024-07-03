@@ -1,0 +1,37 @@
+@media (max-width: 761px) {
+  .nav{
+    width: 120px;
+  }
+  .card{
+    width: 150px;
+  }.addnew{
+    width: 6vw;
+    font-size: small;
+  }
+  .category{
+    font-size: small;
+    font-weight: 500;
+  }
+  .categories{
+    font-size: small;
+  }
+  .dot{
+    width: 10px;
+    height: 8px;
+  }
+  .details{
+    flex-direction: column;
+    margin-top: 200px;
+    /* background-color: aqua; */
+  }
+  .prodimage{
+    margin-top: 100px;
+  }
+  .prodtitle{
+    font-size: small;
+  }
+  .containt{
+    width: 100%;
+    /* background-color: rgb(254, 6, 6);   */
+  }
+}

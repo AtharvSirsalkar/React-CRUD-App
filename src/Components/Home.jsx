@@ -6,6 +6,7 @@ import { ProductContext } from "../utils/Context";
 import Loading from "./Loading";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
+import "./nav.css";
 
 const Home = () => {
   const [products] = useContext(ProductContext);
@@ -36,21 +37,23 @@ const Home = () => {
     <>
       <Nav />
 
-      <div className="w-[85%]  p-10 mt-10 pt-[5%] flex flex-wrap overflow-x-hidden overflow-y-auto">
+      <div className="w-[85%] p-10 mt-10 pt-[5%] flex flex-wrap overflow-y-auto overflow-x-hidden ">
         {filteredProducts &&
           filteredProducts.map((p, i) => (
             <Link
               key={i}
               to={`/details/${p.id}`}
-              className="card p-5 mx-8 mr-8 mb-20 border-2 hover:shadow-2xl shadow-lg rounded w-[18%] h-[35vh] hover:scale-[1.02] ease-in-out duration-500  flex justify-center flex-col items-center"
+              className="card p-5 mx-8 mr-8 mb-20 border-2 hover:shadow-2xl shadow-lg rounded md:w-[200px] w-[50vw] h-[35vh] hover:scale-[1.02] ease-in-out duration-500  flex justify-center flex-col items-center shrink-0 "
             >
               <div
-                className="mb-8 w-full h-[80%] bg-contain bg-no-repeat bg-center hover:scale-[1.1] ease-in-out duration-1000"
+                className="mb-8 w-full h-[80%] bg-contain bg-no-repeat bg-center hover:scale-[1.1] ease-in-out duration-1000 "
                 style={{
                   backgroundImage: `url(${p.image})`,
                 }}
               ></div>
-              <h1 className="hover:text-blue-500">{p.title}</h1>
+              <h1 className="hover:text-blue-500 shrink-0 md:text-base text-sm">
+                {p.title}
+              </h1>
             </Link>
           ))}
       </div>
