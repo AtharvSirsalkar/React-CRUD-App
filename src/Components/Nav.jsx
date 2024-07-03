@@ -18,9 +18,8 @@ function Nav() {
   return (
     <nav className="h-full w-[15%] bg-zinc-50 flex flex-col items-center pt-5 ">
       <Link
-        to={`/create`}
+        to="/create"
         className="py-3 px-5 border rounded border-blue-400 hover:scale-[1.1] ease-in-out duration-700 hover:shadow-lg text-blue-400 hover:text-blue-700 hover:border-blue-800 hover:font-semibold"
-        
       >
         Add New Product
       </Link>
